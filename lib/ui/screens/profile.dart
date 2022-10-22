@@ -56,12 +56,22 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
             ),
-            Text('Александр Кленин', style: TextStyle(fontWeight: FontWeight.bold),),
-            Text('Администратор'),
+            const Text('Александр Кленин', style: TextStyle(fontWeight: FontWeight.bold),),
+            const Text(
+              'Администратор',
+              style: TextStyle(
+                color: Color(0xFFFE5000),
+              ),
+            ),
             Row(
-              children: const [
+              children: [
                 Spacer(),
                 Text('Бронирований 0'),
+                Container(
+                  height: 15,
+                  width: 5,
+                  color: const Color(0xFFD9D9D9),
+                ),
                 Text('Уведомлений 0'),
                 Spacer(),
               ],
