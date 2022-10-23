@@ -32,7 +32,7 @@ class ProfileCard extends StatelessWidget {
               ),
               child: SvgPicture.asset(
                   pathToIcon,
-                  color: const Color(atbMainColor),
+                  color: atbMainColor,
               ),
             ),
             title: Text(

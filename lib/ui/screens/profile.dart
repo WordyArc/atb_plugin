@@ -39,13 +39,8 @@ class _ProfileState extends State<Profile> {
                           clipper: ProfileClipper(),
                           child: Container(
                             height: 270,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color(0xFFFE5000),
-                                  Color(0xFFFCA92A),
-                                ],
-                              ),
+                            decoration:  BoxDecoration(
+                              gradient: atbGradient,
                             ),
                           ),
                         )
@@ -77,13 +72,13 @@ class _ProfileState extends State<Profile> {
                     fontWeight: FontWeight.bold,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'Администратор',
                   style: TextStyle(
                     fontSize: 15,
-                    color: Color(0xFFFE5000),
+                    color: atbMainColor,
                   ),
                 ),
               ),
