@@ -1,3 +1,4 @@
+import 'package:atb_plugin/ui/screens/about.dart';
 import 'package:atb_plugin/ui/screens/profile.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      home: const Profile(),
+      home: const About(),
     );
   }
 }
