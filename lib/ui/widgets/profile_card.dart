@@ -1,3 +1,4 @@
+import 'package:atb_plugin/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -5,7 +6,7 @@ class ProfileCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final String pathToIcon;
-  static const double _iconSize = 60.0;
+  static const double _iconSize = 50.0;
 
   const ProfileCard({
     Key? key,
@@ -31,7 +32,7 @@ class ProfileCard extends StatelessWidget {
               ),
               child: SvgPicture.asset(
                   pathToIcon,
-                  color: const Color(0xFFFE5000),
+                  color: const Color(atbMainColor),
               ),
             ),
             title: Text(
