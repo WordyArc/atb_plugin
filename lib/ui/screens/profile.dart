@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:atb_plugin/globals.dart';
 
@@ -105,22 +106,22 @@ class _ProfileState extends State<Profile> {
                   ProfileCard(
                     title: 'Предстоящие брони',
                     subtitle: '27 декабря',
-                    pathToIcon: 'assets/images/date.png',
+                    pathToIcon: 'assets/svg/date.svg',
                   ),
                   ProfileCard(
                     title: '???????????????????',
                     subtitle: '??????????',
-                    pathToIcon: 'assets/images/date.png',
+                    pathToIcon: 'assets/svg/date.svg',
                   ),
                   ProfileCard(
-                    title: '???????????????????',
-                    subtitle: '??????????',
-                    pathToIcon: 'assets/images/date.png',
+                    title: 'Настройки',
+                    subtitle: 'Основные настройки',
+                    pathToIcon: 'assets/svg/setting.svg',
                   ),
                   ProfileCard(
                     title: 'Обо мне',
                     subtitle: 'Информация об аккаунте',
-                    pathToIcon: 'assets/images/date.png',
+                    pathToIcon: 'assets/svg/profile.svg',
                   ),
 
                 ],

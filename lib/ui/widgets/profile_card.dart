@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ProfileCard extends StatelessWidget {
   final String title;
@@ -28,7 +29,10 @@ class ProfileCard extends StatelessWidget {
                 maxWidth: _iconSize,
                 maxHeight: _iconSize,
               ),
-              child: Image.asset(pathToIcon,),
+              child: SvgPicture.asset(
+                  pathToIcon,
+                  color: const Color(0xFFFE5000),
+              ),
             ),
             title: Text(
               title,
