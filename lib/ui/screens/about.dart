@@ -1,3 +1,4 @@
+import 'package:atb_plugin/ui/widgets/about_card.dart';
 import 'package:atb_plugin/ui/widgets/gradient_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,6 +16,8 @@ class About extends StatefulWidget {
 }
 
 class _AboutState extends State<About> {
+  get onPressed => null;
+
 
 
   @override
@@ -87,50 +90,25 @@ class _AboutState extends State<About> {
 
 
               Column(
-                children: [
-                  Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Theme.of(context).colorScheme.outline,
-                      ),
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
-                    ),
-                    child: SizedBox(
-                      width: 350,
-                      height: 70,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: SvgPicture.asset(
-                              'assets/svg/date.svg',
-                              color: atbMainColor,
-                            ),
-                          ),
-
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                    'Title',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                Text('Subtitle'),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                children: const [
+                  AboutCard(title: 'Email', subtitle: 'Klenin@Gmail.com', pathToIcon: 'assets/svg/email.svg'),
+                  AboutCard(title: 'Телефон', subtitle: '88003555500', pathToIcon: 'assets/svg/phone.svg'),
+                  AboutCard(title: 'Должность', subtitle: 'Разработчик над разработчиками', pathToIcon: 'assets/svg/profile.svg'),
+                  AboutCard(title: 'Адресс', subtitle: 'г. Владивосток, ДВФУ', pathToIcon: 'assets/svg/home.svg'),
                 ],
-              )
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: TextButton(onPressed: onPressed,
+                    child: const Text(
+                      'Выйти из аккаунта',
+                      style: TextStyle(
+                        color: Color(0xFFDA000A),
+                      ),
+                    )
+                ),
+              ),
             ],
           ),
         ),
