@@ -6,6 +6,8 @@ class ProfileCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final String pathToIcon;
+  final VoidCallback onPressed;
+
   static const double _iconSize = 50.0;
 
   const ProfileCard({
@@ -13,7 +15,9 @@ class ProfileCard extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.pathToIcon,
+    required this.onPressed,
   }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,7 @@ class ProfileCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
+            onTap: onPressed,
             leading: ConstrainedBox(
               constraints: const BoxConstraints(
                 minWidth: _iconSize,
