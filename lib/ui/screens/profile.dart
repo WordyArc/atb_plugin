@@ -53,53 +53,50 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                             )),
-                        Positioned(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 110.0),
-                              child: Center(
-                                child: Container(
-                                  width: 150,
-                                  height: 150,
-                                  decoration: const BoxDecoration(
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(73)),
-                                      image: DecorationImage(
-                                          image: AssetImage(profileImage))),
+                        const Positioned.fill(
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: SizedBox(
+                                width: 160,
+                                height: 160,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(profileImage,),
                                 ),
                               ),
                             ),
                         ),
                       ],
                     ),
-                    Column(
-                      children: [
-                        Center(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
 
-                              const Text(
-                                'Александр Кленин',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Администратор',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: atbMainColor,
-                                  ),
-                                ),
-                              ),
-                            ],
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Александр Кленин',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 13.0),
+                            child: Text(
+                              'Администратор',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: atbMainColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
+
+
                   ],
                 ),
               ),
