@@ -22,7 +22,7 @@ class GradientElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(30);
+    final borderRadius = this.borderRadius ?? BorderRadius.circular(14);
     return Container(
       width: width ?? 180,
       height: height,
