@@ -71,6 +71,10 @@ flutter:
     - assets/svg/email.svg
     - assets/svg/phone.svg
     - assets/svg/home.svg
+    - assets/svg/chevron_down.svg
+    - assets/svg/user.svg
+    - assets/svg/support.svg
+    - assets/svg/exit.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
