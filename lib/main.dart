@@ -1,4 +1,5 @@
 import 'package:atb_plugin/ui/screens/about.dart';
+import 'package:atb_plugin/ui/screens/booking_list.dart';
 import 'package:atb_plugin/ui/screens/profile.dart';
 import 'package:atb_plugin/ui/screens/settings.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.deepOrange,
       ),
-      home: const About(),
+      home: const BookingList(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:atb_plugin/globals.dart';
+import 'package:atb_plugin/ui/widgets/booking_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,8 @@ class BookingList extends StatefulWidget {
 }
 
 class _BookingListState extends State<BookingList> {
+  String _dropDownValue = 'DropDown test';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,15 +35,40 @@ class _BookingListState extends State<BookingList> {
                 borderRadius: BorderRadius.circular(4),
                 color: Colors.white
               ),
-              child: const Center(
-                child: Text(
+              child: Center(
+                child: DropdownButton(
+                  hint: _dropDownValue == null ? Text('Dropdown') : Text(_dropDownValue),
+                  isExpanded: true,
+                  iconSize: 30.0,
+                  style: TextStyle(color: Colors.blue),
+                  items: [
+                    'г. Владивосток, ДВФУ, к. G',
+                    'г. Владивосток, ДВФУ, к. G',
+                    'г. Владивосток, ДВФУ, к. G',
+                  ].map(
+                        (val) {
+                      return DropdownMenuItem<String>(
+                        value: val,
+                        child: Text(val),
+                      );
+                    },
+                  ).toList(),
+                  onChanged: (val) {
+                    setState(
+                          () {
+                        _dropDownValue = val!;
+                      },
+                    );
+                  },
+                )
+                /*Text(
                   'г. Владивосток, ДВФУ, к. G',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
-                ),
+                ),*/
               ),
             ),
           ),
@@ -53,58 +81,16 @@ class _BookingListState extends State<BookingList> {
         ),
       ),
       body: SafeArea(
-          child: Card(
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                color: Colors.black,
-              ),
-              borderRadius: const BorderRadius.all(Radius.circular(4)),
-            ),
-            child: GestureDetector (
-              child: SizedBox(
-                width: 300,
-                height: 56,
-                child: Row(
-                  children: [
-                    Container(
-                      height: 56,
-                      width: 4,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(4), bottomLeft: Radius.circular(4),)
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'title',
-                            style: TextStyle(
-                              color: Color(0xFF090C17),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Text(
-                            'subtitle',
-                            style: TextStyle(
-                              color: Color(0xFF757575),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          child: Column(
+            children: [
+              BookingCard(title: 'Место 1', subtitle: 'Монитор', indicatorColor: indicatorGreen, onPressed: () {} ,),
+              BookingCard(title: 'Место 2', subtitle: 'Монитор, мышь, клавиатура', indicatorColor: indicatorRed, onPressed: () {} ,),
+              BookingCard(title: 'Место 3', subtitle: 'iMac', indicatorColor: indicatorRed, onPressed: () {} ,),
+              BookingCard(title: 'Место 4', subtitle: 'Монитор, мышь, клавиатура', indicatorColor: indicatorYellow, onPressed: () {} ,),
+              BookingCard(title: 'Место 5', subtitle: 'macMini, монитор', indicatorColor: indicatorYellow, onPressed: () {} ,),
+              BookingCard(title: 'Место 6', subtitle: 'Монитор, мышь, клавиатура', indicatorColor: indicatorGreen, onPressed: () {} ,),
+            ],
+          )
       ),
     );
   }

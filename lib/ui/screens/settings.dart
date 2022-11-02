@@ -30,52 +30,126 @@ class _SettingsState extends State<Settings> {
         title: const Text('ATB Plug-in Project'),
       ),*/
       body: SafeArea(
-          child: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Основные настройки',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        child: Center(
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                elevation: 0,
+                pinned: true,
+                flexibleSpace: Container(
+                  decoration: BoxDecoration(
+                    gradient: atbGradient,
+                  ),
+                  child: const FlexibleSpaceBar(
+                    background: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Text(
+                          'Основные настройки',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('MainTitle'),
-                Card(
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      // color: Theme.of(context).colorScheme.background,
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12)),
-                  ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15.0),
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 50,
-                        child: ListTile(
-                          title: Text('Setting 1'),
-                        ),
+
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'Аккаунт',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 370,
+                            child: Column(
+                              children: const [
+                                Card(
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: -3),
+                                    title: Text(
+                                      'Редактировать профиль',
+                                    ),
+                                  ),
+                                ),
+                                Card(
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: -3),
+                                    title: Text(
+                                      'Сменить пароль',
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      SizedBox(
-                        child: ListTile(
-                          title: Text('Setting 2'),
-                        ),
+
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'Приложение',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 370,
+                            child: Column(
+                              children: const [
+                                Card(
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: -3),
+                                    title: Text(
+                                      'Оформление',
+                                    ),
+                                  ),
+                                ),
+                                Card(
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: -3),
+                                    title: Text(
+                                      'Выбрать язык',
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
+
+
+
                     ],
                   ),
                 ),
-              ],
-            )
-          ],
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

@@ -18,6 +18,10 @@ Gradient atbGradient = const LinearGradient(
   ],
 );
 
+Color indicatorRed = const Color(0xFFFF5630);
+Color indicatorGreen = const Color(0xFF36B37E);
+Color indicatorYellow = const Color(0xFFFF9800);
+
 bool AllOK = false;
 int USERID = 0;
 String somewonetext = "LOL";
